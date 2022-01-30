@@ -32,7 +32,7 @@ sudo mysql_secure_installation
 sudo mysql -u root -p 
 
 # Create a user - admin with a blank password
-CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
 GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
@@ -40,7 +40,7 @@ FLUSH PRIVILEGES;
 exit
 ```
 
-### Verify that you can login via `admin` by: `mysql -u admin`
+### Verify that you can login via `admin` by: `mysql -u admin -p` by entering the password 'admin'
 
 ## Install Composer
 
