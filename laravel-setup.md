@@ -50,20 +50,19 @@ sudo apt update
 # Download some required dependencies (use php7.4-x if required)
 sudo apt install curl php-cli php-mbstring git unzip
 
-# Refer to the Composer Documentation for #1 and #2
-[https://getcomposer.org/download/](https://getcomposer.org/download/)
-
-#1 Download the installer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 
-#2 Verify the installer
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'e5325b19b381bfd88ce90a5ddb7823406b2a38cff6bb704b0acc289a09c8128d4a8ce2bbafcd1fcbdc38666422fe2806') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { 
 
-# Install Composer
-sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 
-# Update permissions to the composer directory
-sudo chown -R $USER ~/.composer/
+php composer-setup.php
+
+# For using composer globally
+sudo mv composer.phar /usr/local/bin/composer
+
+# Resource:
+https://getcomposer.org/download/
 ```
 
 ### Verify the installation with `composer`
