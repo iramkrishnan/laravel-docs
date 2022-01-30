@@ -78,7 +78,7 @@ sudo apt install php7.4-xml
 composer global require laravel/installer
 
 # Update the $PATH env
-export PATH="~/.composer/vendor/bin:$PATH"
+export PATH="~/.composer/vendor/bin:$PATH" OR export PATH="~/.config/composer/vendor/bin:$PATH"
 ```
 
 ## First Laravel Project
